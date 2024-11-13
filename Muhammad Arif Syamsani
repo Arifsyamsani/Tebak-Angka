@@ -1,0 +1,28 @@
+import random
+
+def main():
+    print("Selamat datang di permainan Tebak Angka!")
+    print("Saya sudah memilih angka antara 1 dan 100, coba tebak!")
+
+    # Komputer memilih angka acak antara 1 hingga 100
+    number_to_guess = random.randint(1, 100)
+
+    # Variabel untuk menyimpan jumlah percakapan
+    attempts = 0
+
+    while True:
+        # Mengambil input tebakan dari pengguna
+        guess = int(input("Masukkan tebakan Anda: "))
+        attempts += 1
+
+        # Mengecek apakah tebakan benar
+        if guess < number_to_guess:
+            print("Tebakan Anda terlalu rendah. Coba lagi!")
+        elif guess > number_to_guess:
+            print("Tebakan Anda terlalu tinggi. Coba lagi!")
+        else:
+            print(f"Selamat! Anda berhasil menebak angka {number_to_guess} dalam {attempts} percakapan.")
+            break
+
+if __name__ == "__main__":
+    main()
